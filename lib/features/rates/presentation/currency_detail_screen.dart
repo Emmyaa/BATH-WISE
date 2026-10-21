@@ -7,6 +7,7 @@ import 'package:bath_wise/core/widgets/change_indicator.dart';
 import 'package:bath_wise/core/widgets/currency_flag.dart';
 import 'package:bath_wise/core/widgets/glass_card.dart';
 import 'package:bath_wise/core/widgets/state_views.dart';
+import 'package:bath_wise/features/chart/presentation/currency_chart_section.dart';
 import 'package:bath_wise/features/rates/domain/rate_enums.dart';
 import 'package:bath_wise/features/rates/domain/rate_quote.dart';
 import 'package:bath_wise/features/rates/presentation/latest_rates_view_model.dart';
@@ -16,8 +17,8 @@ import 'package:bath_wise/features/rates/presentation/widgets/rates_status.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// Currency Detail. Phase 3: header (Hero target) and today's rates.
-/// The chart and compare mode arrive in Phase 5.
+/// Currency Detail: header (Hero target), history chart with compare mode
+/// and stats, and today's rates.
 class CurrencyDetailScreen extends ConsumerWidget {
   const new({required this.code, super.key, this.heroTag});
 
@@ -52,15 +53,15 @@ class CurrencyDetailScreen extends ConsumerWidget {
                 const SizedBox(height: AppSpacing.md),
                 DegradedDataBanner(snapshot: snapshot),
                 const SizedBox(height: AppSpacing.md),
-                _RatesTable(quote: quote),
-                const SizedBox(height: AppSpacing.lg),
-                Text(
-                  context.l10n.detailChartSoon,
-                  textAlign: TextAlign.center,
-                  style: context.text.bodySmall?.copyWith(
-                    color: context.colors.onSurfaceVariant,
-                  ),
+                CurrencyChartSection(
+                  code: code,
+                  compareCandidates: [
+                    for (final q in snapshot.quotes)
+                      if (q.currencyCode != code) q.currencyCode,
+                  ],
                 ),
+                const SizedBox(height: AppSpacing.md),
+                _RatesTable(quote: quote),
               ],
             ),
     );

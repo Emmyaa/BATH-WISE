@@ -137,7 +137,6 @@
   "loanCardUnavailable": "Loan rates are unavailable right now.",
   "loanRatesTitle": "Loan rates",
   "detailRates": "Today's rates",
-  "detailChartSoon": "Charts and comparison arrive soon.",
   "a11yRate": "{name}, {rate} baht {perUnit}, {change}",
   "@a11yRate": {
     "placeholders": {
@@ -244,6 +243,115 @@
         "type": "String"
       },
       "to": {
+        "type": "String"
+      }
+    }
+  },
+  "chartTitle": "Mid rate history",
+  "chartRangeWeek": "1W",
+  "chartRangeMonth": "1M",
+  "chartRangeThreeMonths": "3M",
+  "chartRangeYear": "1Y",
+  "chartRangeFiveYears": "5Y",
+  "a11yRangeWeek": "1 week",
+  "a11yRangeMonth": "1 month",
+  "a11yRangeThreeMonths": "3 months",
+  "a11yRangeYear": "1 year",
+  "a11yRangeFiveYears": "5 years",
+  "chartCaptionDaily": "{source} · daily mid rates",
+  "@chartCaptionDaily": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "chartCaptionMonthly": "{source} · monthly average mid rates",
+  "@chartCaptionMonthly": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "chartCaptionCompare": "% change since {date}",
+  "@chartCaptionCompare": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "chartStale": "Couldn't refresh. Showing saved history.",
+  "chartNotEnoughData": "Not enough data for this range yet.",
+  "chartErrorTitle": "Couldn't load the chart",
+  "chartCompare": "Compare",
+  "chartCompareTitle": "Compare with",
+  "chartStopComparing": "Stop comparing with {code}",
+  "@chartStopComparing": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "statsTitle": "Stats",
+  "statHigh": "High",
+  "statLow": "Low",
+  "statAverage": "Average",
+  "statChange": "Change",
+  "statVolatility": "Volatility",
+  "statVolatilityDaily": "σ of daily changes",
+  "statVolatilityMonthly": "σ of monthly changes",
+  "a11yChart": "{name}, {range} chart. From {start} to {end}, {change}.",
+  "@a11yChart": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "range": {
+        "type": "String"
+      },
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      },
+      "change": {
+        "type": "String"
+      }
+    }
+  },
+  "a11yCompareChart": "{range} comparison. {first}. {second}.",
+  "@a11yCompareChart": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      },
+      "first": {
+        "type": "String"
+      },
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "a11yCompareLine": "{code} {change}",
+  "@a11yCompareLine": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      },
+      "change": {
+        "type": "String"
+      }
+    }
+  },
+  "chartVersus": "vs {code}",
+  "@chartVersus": {
+    "placeholders": {
+      "code": {
         "type": "String"
       }
     }

@@ -10,6 +10,10 @@ abstract final class AppColors {
   static const teal = Color(0xFF0D9488);
   static const tealBright = Color(0xFF2DD4BF);
 
+  // Accent for a second chart line (compare mode).
+  static const amber = Color(0xFFD97706);
+  static const amberBright = Color(0xFFFBBF24);
+
   // Gain / loss. Dark variants are lighter for contrast on navy.
   static const gainLight = Color(0xFF059669);
   static const lossLight = Color(0xFFDC2626);

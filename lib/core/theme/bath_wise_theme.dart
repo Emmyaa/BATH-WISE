@@ -13,6 +13,7 @@ class BathWiseTheme extends ThemeExtension<BathWiseTheme> {
     required this.gain,
     required this.loss,
     required this.neutral,
+    required this.compareLine,
     required this.glassFill,
     required this.glassBorder,
     required this.glassBlurSigma,
@@ -31,6 +32,7 @@ class BathWiseTheme extends ThemeExtension<BathWiseTheme> {
     gain: AppColors.gainLight,
     loss: AppColors.lossLight,
     neutral: AppColors.neutralLight,
+    compareLine: AppColors.amber,
     glassFill: Color(0xB3FFFFFF),
     glassBorder: Color(0x99FFFFFF),
     glassBlurSigma: 18,
@@ -53,6 +55,7 @@ class BathWiseTheme extends ThemeExtension<BathWiseTheme> {
     gain: AppColors.gainDark,
     loss: AppColors.lossDark,
     neutral: AppColors.neutralDark,
+    compareLine: AppColors.amberBright,
     glassFill: Color(0x991E2849),
     glassBorder: Color(0x1FFFFFFF),
     glassBlurSigma: 22,
@@ -79,6 +82,9 @@ class BathWiseTheme extends ThemeExtension<BathWiseTheme> {
   final Color loss;
   final Color neutral;
 
+  /// Second line in chart compare mode; distinct from the brand colors.
+  final Color compareLine;
+
   final Color glassFill;
   final Color glassBorder;
   final double glassBlurSigma;
@@ -99,6 +105,7 @@ class BathWiseTheme extends ThemeExtension<BathWiseTheme> {
     Color? gain,
     Color? loss,
     Color? neutral,
+    Color? compareLine,
     Color? glassFill,
     Color? glassBorder,
     double? glassBlurSigma,
@@ -111,6 +118,7 @@ class BathWiseTheme extends ThemeExtension<BathWiseTheme> {
       gain: gain ?? this.gain,
       loss: loss ?? this.loss,
       neutral: neutral ?? this.neutral,
+      compareLine: compareLine ?? this.compareLine,
       glassFill: glassFill ?? this.glassFill,
       glassBorder: glassBorder ?? this.glassBorder,
       glassBlurSigma: glassBlurSigma ?? this.glassBlurSigma,
@@ -136,6 +144,7 @@ class BathWiseTheme extends ThemeExtension<BathWiseTheme> {
       gain: Color.lerp(gain, other.gain, t)!,
       loss: Color.lerp(loss, other.loss, t)!,
       neutral: Color.lerp(neutral, other.neutral, t)!,
+      compareLine: Color.lerp(compareLine, other.compareLine, t)!,
       glassFill: Color.lerp(glassFill, other.glassFill, t)!,
       glassBorder: Color.lerp(glassBorder, other.glassBorder, t)!,
       glassBlurSigma:

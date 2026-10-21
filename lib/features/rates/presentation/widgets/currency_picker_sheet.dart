@@ -8,11 +8,12 @@ import 'package:bath_wise/features/rates/presentation/widgets/rate_tile.dart';
 import 'package:flutter/material.dart';
 
 /// Shows a searchable list of [codes] and returns the picked one, or null
-/// if dismissed.
+/// if dismissed. [title] defaults to "Choose currency".
 Future<String?> showCurrencyPicker(
   BuildContext context, {
   required List<String> codes,
   required String selected,
+  String? title,
 }) => showModalBottomSheet<String>(
   context: context,
   isScrollControlled: true,
@@ -20,15 +21,16 @@ Future<String?> showCurrencyPicker(
   showDragHandle: true,
   builder: (_) => FractionallySizedBox(
     heightFactor: 0.85,
-    child: _CurrencyPicker(codes: codes, selected: selected),
+    child: _CurrencyPicker(codes: codes, selected: selected, title: title),
   ),
 );
 
 class _CurrencyPicker extends StatefulWidget {
-  const new({required this.codes, required this.selected});
+  const new({required this.codes, required this.selected, this.title});
 
   final List<String> codes;
   final String selected;
+  final String? title;
 
   @override
   State<_CurrencyPicker> createState() => _CurrencyPickerState();
@@ -58,7 +60,7 @@ class _CurrencyPickerState extends State<_CurrencyPicker> {
           child: Semantics(
             header: true,
             child: Text(
-              l10n.converterPickCurrency,
+              widget.title ?? l10n.converterPickCurrency,
               style: context.text.titleLarge,
             ),
           ),

@@ -15,6 +15,17 @@ class DateFormatters {
       ? '${DateFormat('d MMM', locale).format(date)} ${date.year + 543}'
       : DateFormat.yMMMd(locale).format(date);
 
+  /// Day and month, for chart axes: "Oct 19" / "19 ต.ค.".
+  String dayMonth(DateTime date) => DateFormat.MMMd(locale).format(date);
+
+  /// A month: "Oct 2026" / "ต.ค. 2569". [shortYear] gives "Oct 26" /
+  /// "ต.ค. 69" for chart axes.
+  String month(DateTime date, {bool shortYear = false}) {
+    final year = _thai ? date.year + 543 : date.year;
+    final shown = shortYear ? (year % 100).toString().padLeft(2, '0') : '$year';
+    return '${DateFormat.MMM(locale).format(date)} $shown';
+  }
+
   /// Short weekday of a Bangkok date: "Mon" / "จ.".
   String weekday(DateTime date) => DateFormat.E(locale).format(date);
 

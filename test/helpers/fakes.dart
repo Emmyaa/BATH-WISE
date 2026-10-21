@@ -11,10 +11,12 @@ import 'package:bath_wise/features/market_calendar/domain/holiday_repository.dar
 import 'package:bath_wise/features/market_calendar/domain/market_calendar_service.dart';
 import 'package:bath_wise/features/rates/data/bot_exchange_rate_dto.dart';
 import 'package:bath_wise/features/rates/data/rates_providers.dart';
+import 'package:bath_wise/features/rates/domain/exchange_rate.dart';
 import 'package:bath_wise/features/rates/domain/fx_repository.dart';
 import 'package:bath_wise/features/rates/domain/rate_enums.dart';
 import 'package:bath_wise/features/rates/domain/rate_models.dart';
 import 'package:bath_wise/features/rates/domain/rate_quote.dart';
+import 'package:decimal/decimal.dart';
 import 'package:flutter_riverpod/misc.dart';
 
 import 'test_helpers.dart';
@@ -37,6 +39,42 @@ RatesSnapshot sampleSnapshot({
   );
 }
 
+typedef HistoryRequest = ({
+  String code,
+  Periodicity periodicity,
+  DateTime start,
+  DateTime end,
+});
+
+/// A [RateSeries] of mid rates, one per day (or month) from [start].
+RateSeries fakeSeries(
+  String code,
+  List<num> mids, {
+  Periodicity periodicity = Periodicity.daily,
+  DateTime? start,
+  RateSource source = RateSource.bot,
+  Failure? refreshFailure,
+}) {
+  final first = start ?? DateTime.utc(2026, 9, 21);
+  return RateSeries(
+    currencyCode: code,
+    periodicity: periodicity,
+    source: source,
+    refreshFailure: refreshFailure,
+    points: [
+      for (final (i, mid) in mids.indexed)
+        ExchangeRate(
+          currencyCode: code,
+          period: periodicity == Periodicity.daily
+              ? DateTime.utc(first.year, first.month, first.day + i)
+              : DateTime.utc(first.year, first.month + i),
+          source: source,
+          mid: Decimal.parse('$mid'),
+        ),
+    ],
+  );
+}
+
 class FakeFxRepository implements FxRepository {
   new(this.latest);
 
@@ -54,13 +92,27 @@ class FakeFxRepository implements FxRepository {
     return latest;
   }
 
+  /// What [getHistory] returns per request; no data by default.
+  Result<RateSeries> Function(HistoryRequest request) history = (_) =>
+      const Err(NoDataFailure());
+  final historyRequests = <HistoryRequest>[];
+
   @override
   Future<Result<RateSeries>> getHistory({
     required String currencyCode,
     required Periodicity periodicity,
     required DateTime start,
     required DateTime end,
-  }) async => const Err(NoDataFailure());
+  }) async {
+    final request = (
+      code: currencyCode,
+      periodicity: periodicity,
+      start: start,
+      end: end,
+    );
+    historyRequests.add(request);
+    return history(request);
+  }
 
   @override
   Future<Result<CrossRate>> getCrossRate({
