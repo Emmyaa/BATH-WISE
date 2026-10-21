@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          # Typed CheckedFromJsonException instead of raw TypeErrors.
+          checked: true
+          field_rename: snake
+          create_to_json: false
+      drift_dev:
+        options:
+          # ISO-8601 text keeps UTC DateTimes UTC on read and sorts correctly.
+          store_date_time_values_as_text: true

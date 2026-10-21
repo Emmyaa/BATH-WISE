@@ -1,0 +1,13 @@
+{
+  "_request": "https://gateway.api.bot.or.th/Stat-ExchangeRate/v2/DAILY_AVG_EXG_RATE/?start_period=2026-09-15&end_period=2026-10-20",
+  "_status": 400,
+  "body": {
+    "httpCode": "400",
+    "httpMessage": "Bad Request",
+    "moreInformation": [
+      {
+        "message": "Exceed limit period. Limit period is 31 days"
+      }
+    ]
+  }
+}

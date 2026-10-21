@@ -1,0 +1,20 @@
+{
+  "result": {
+    "api": "Average Loan Interest Rates of Commercial Banks (Percent per annum)",
+    "timestamp": "2026-10-20 14:10:00",
+    "data": {
+      "data_detail": {
+        "period": "2026-10-20",
+        "name_th": "ธนาคารพาณิชย์จดทะเบียนในประเทศ",
+        "name_eng": "Commercial Banks Registered in Thailand",
+        "mor": "7.0150",
+        "mlr": "6.6200",
+        "mrr": "7.0410",
+        "ceiling_rate": "",
+        "default_rate": "",
+        "creditcard_min": "",
+        "creditcard_max": ""
+      }
+    }
+  }
+}

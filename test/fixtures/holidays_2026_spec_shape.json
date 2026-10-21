@@ -1,0 +1,26 @@
+[
+  {
+    "HolidayWeekDay": "Thursday",
+    "HolidayWeekDayThai": "วันพฤหัสบดี",
+    "Date": "2026-01-01",
+    "DateThai": "01/01/2569",
+    "HolidayDescription": "New Year's Day ",
+    "HolidayDescriptionThai": "วันขึ้นปีใหม่"
+  },
+  {
+    "HolidayWeekDay": "Tuesday",
+    "HolidayWeekDayThai": "วันอังคาร",
+    "Date": "2026-10-13",
+    "DateThai": "13/10/2569",
+    "HolidayDescription": "H.M. King Bhumibol Adulyadej The Great Memorial Day",
+    "HolidayDescriptionThai": "วันนวมินทรมหาราช"
+  },
+  {
+    "HolidayWeekDay": "Friday",
+    "HolidayWeekDayThai": "วันศุกร์",
+    "Date": "2026-10-23",
+    "DateThai": "23/10/2569",
+    "HolidayDescription": "Chulalongkorn Day",
+    "HolidayDescriptionThai": "วันปิยมหาราช"
+  }
+]

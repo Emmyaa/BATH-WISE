@@ -1,0 +1,7 @@
+{
+  "_request": "https://gateway.api.bot.or.th/Stat-ExchangeRate/v2/DAILY_AVG_EXG_RATE/?start_period=2026-10-20&end_period=2026-10-20",
+  "_status": 403,
+  "body": {
+    "error": "Access to this API has been disallowed"
+  }
+}

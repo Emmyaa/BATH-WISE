@@ -1,0 +1,63 @@
+{
+  "_request": "https://gateway.api.bot.or.th/Stat-ExchangeRate/v2/ANNUAL_AVG_EXG_RATE/?start_period=2023&end_period=2025&currency=JPY",
+  "_status": 200,
+  "body": {
+    "result": {
+      "timestamp": "2026-10-20 15:42:38",
+      "api": "Annual Average Exchange Rate - THB / Foreign Currency",
+      "data": {
+        "data_header": {
+          "report_name_eng": "Rates of Exchange of Commercial Banks in Bangkok Metropolis (2002-present)",
+          "report_name_th": "อัตราแลกเปลี่ยนเฉลี่ยของธนาคารพาณิชย์ในกรุงเทพมหานคร (2545-ปัจจุบัน)",
+          "report_uoq_name_eng": "(Unit: Baht / 1 Unit of Foreign Currency)",
+          "report_uoq_name_th": "(หน่วย: บาท ต่อ 1 หน่วยเงินตราต่างประเทศ)",
+          "report_source_of_data": [
+            {
+              "source_of_data_eng": "Bank of Thailand",
+              "source_of_data_th": "ธนาคารแห่งประเทศไทย"
+            }
+          ],
+          "report_remark": [
+            {
+              "report_remark_eng": "Since Nov 16, 2015 the data regarding Buying Transfer Rate of PKR has been changed to Buying Rate using Foreign Exchange Rates (LSEG) with Bangkok Market Crossing.",
+              "report_remark_th": "ตั้งแต่วันที่ 16 พ.ย. 2558 ข้อมูลในอัตราซื้อเงินโอนของสกุล PKR ได้เปลี่ยนเป็นอัตราซื้อที่ใช้อัตราในตลาดต่างประเทศ (LSEG) คำนวณผ่านอัตราซื้อขายเงินดอลลาร์ สรอ. ในตลาดกรุงเทพฯ"
+            }
+          ],
+          "last_updated": "2026-10-19"
+        },
+        "data_detail": [
+          {
+            "period": "2025",
+            "currency_id": "JPY",
+            "currency_name_th": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+            "currency_name_eng": "JAPAN : YEN (100 YEN) (JPY) ",
+            "buying_sight": "21.5952000",
+            "buying_transfer": "21.6836000",
+            "selling": "22.3219000",
+            "mid_rate": "22.0028000"
+          },
+          {
+            "period": "2024",
+            "currency_id": "JPY",
+            "currency_name_th": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+            "currency_name_eng": "JAPAN : YEN (100 YEN) (JPY) ",
+            "buying_sight": "22.8895000",
+            "buying_transfer": "22.9893000",
+            "selling": "23.6613000",
+            "mid_rate": "23.3253000"
+          },
+          {
+            "period": "2023",
+            "currency_id": "JPY",
+            "currency_name_th": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+            "currency_name_eng": "JAPAN : YEN (100 YEN) (JPY) ",
+            "buying_sight": "24.3736000",
+            "buying_transfer": "24.4759000",
+            "selling": "25.1686000",
+            "mid_rate": "24.8223000"
+          }
+        ]
+      }
+    }
+  }
+}

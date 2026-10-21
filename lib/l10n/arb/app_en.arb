@@ -1,0 +1,189 @@
+{
+  "@@locale": "en",
+  "appTitle": "BathWise",
+  "tabDashboard": "Home",
+  "tabRates": "Rates",
+  "tabConverter": "Convert",
+  "tabWatchlist": "Watchlist",
+  "tabSettings": "Settings",
+  "comingSoon": "Coming soon",
+  "comingSoonBody": "This screen is being built.",
+  "settingsAppearance": "Appearance",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "sourceBot": "BOT official",
+  "sourceEcb": "ECB reference",
+  "statusUpToDate": "Official BOT rate as of {date}",
+  "@statusUpToDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "statusEcb": "ECB reference rate as of {date}",
+  "@statusEcb": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "statusWeekend": "Weekend — showing rates as of {date}",
+  "@statusWeekend": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "statusHoliday": "Bank holiday ({name}) — showing rates as of {date}",
+  "@statusHoliday": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "statusDelayed": "Today's rates are late — showing rates as of {date}",
+  "@statusDelayed": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "nextUpdateToday": "Next update today at {time}",
+  "@nextUpdateToday": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "nextUpdateOn": "Next update {day} at {time}",
+  "@nextUpdateOn": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "bannerOffline": "You're offline. Showing rates saved {time}.",
+  "@bannerOffline": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "bannerStale": "Couldn't refresh. Showing rates saved {time}.",
+  "@bannerStale": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "bannerEcbFallback": "BOT is unavailable. Showing ECB reference rates (mid only).",
+  "errorTitle": "Couldn't load rates",
+  "errorNetwork": "No internet connection. Check your connection and try again.",
+  "errorUnauthorized": "The API key doesn't have access to this data yet.",
+  "errorRateLimit": "Too many requests right now. Please try again later.",
+  "errorNoData": "No data has been published yet.",
+  "errorGeneric": "Something went wrong. Please try again.",
+  "retry": "Try again",
+  "rateTypeMid": "Mid",
+  "rateTypeBuyingSight": "Buy sight",
+  "rateTypeBuyingTransfer": "Buy TT",
+  "rateTypeSelling": "Sell",
+  "searchCurrencies": "Search currencies",
+  "sortTooltip": "Sort",
+  "sortDefault": "Default order",
+  "sortCode": "Code A–Z",
+  "sortGainers": "Top gainers",
+  "sortLosers": "Top losers",
+  "noResults": "No currency matches “{query}”",
+  "@noResults": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "perUnits": "per {unit} {code}",
+  "@perUnits": {
+    "placeholders": {
+      "unit": {
+        "type": "String"
+      },
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "dashboardWatchlist": "Watchlist",
+  "dashboardTopMovers": "Top movers",
+  "seeAll": "See all",
+  "loanCardTitle": "Average loan rates",
+  "loanCardSubtitle": "Commercial banks · % per year",
+  "loanCardUnavailable": "Loan rates are unavailable right now.",
+  "loanRatesTitle": "Loan rates",
+  "detailRates": "Today's rates",
+  "detailChartSoon": "Charts and comparison arrive soon.",
+  "a11yRate": "{name}, {rate} baht {perUnit}, {change}",
+  "@a11yRate": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "rate": {
+        "type": "String"
+      },
+      "perUnit": {
+        "type": "String"
+      },
+      "change": {
+        "type": "String"
+      }
+    }
+  },
+  "a11yUp": "up {percent}",
+  "@a11yUp": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "a11yDown": "down {percent}",
+  "@a11yDown": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "a11yUnchanged": "unchanged",
+  "a11yHeroRate": "US dollar, {rate} baht, {change}. {status}",
+  "@a11yHeroRate": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      },
+      "change": {
+        "type": "String"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  }
+}

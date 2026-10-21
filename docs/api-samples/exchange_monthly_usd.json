@@ -1,0 +1,153 @@
+{
+  "_request": "https://gateway.api.bot.or.th/Stat-ExchangeRate/v2/MONTHLY_AVG_EXG_RATE/?start_period=2025-10&end_period=2026-09&currency=USD",
+  "_status": 200,
+  "body": {
+    "result": {
+      "timestamp": "2026-10-20 15:42:38",
+      "api": "Monthly Average Exchange Rate - THB / Foreign Currency",
+      "data": {
+        "data_header": {
+          "report_name_eng": "Rates of Exchange of Commercial Banks in Bangkok Metropolis (2002-present)",
+          "report_name_th": "อัตราแลกเปลี่ยนเฉลี่ยของธนาคารพาณิชย์ในกรุงเทพมหานคร (2545-ปัจจุบัน)",
+          "report_uoq_name_eng": "(Unit: Baht / 1 Unit of Foreign Currency)",
+          "report_uoq_name_th": "(หน่วย: บาท ต่อ 1 หน่วยเงินตราต่างประเทศ)",
+          "report_source_of_data": [
+            {
+              "source_of_data_eng": "Bank of Thailand",
+              "source_of_data_th": "ธนาคารแห่งประเทศไทย"
+            }
+          ],
+          "report_remark": [
+            {
+              "report_remark_eng": "Since Nov 16, 2015 the data regarding Buying Transfer Rate of PKR has been changed to Buying Rate using Foreign Exchange Rates (LSEG) with Bangkok Market Crossing.",
+              "report_remark_th": "ตั้งแต่วันที่ 16 พ.ย. 2558 ข้อมูลในอัตราซื้อเงินโอนของสกุล PKR ได้เปลี่ยนเป็นอัตราซื้อที่ใช้อัตราในตลาดต่างประเทศ (LSEG) คำนวณผ่านอัตราซื้อขายเงินดอลลาร์ สรอ. ในตลาดกรุงเทพฯ"
+            }
+          ],
+          "last_updated": "2026-10-19"
+        },
+        "data_detail": [
+          {
+            "period": "2026-09",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "32.9630000",
+            "buying_transfer": "33.0486000",
+            "selling": "33.3762000",
+            "mid_rate": "33.2124000"
+          },
+          {
+            "period": "2026-08",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "32.7731000",
+            "buying_transfer": "32.8557000",
+            "selling": "33.1816000",
+            "mid_rate": "33.0187000"
+          },
+          {
+            "period": "2026-07",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "33.2461000",
+            "buying_transfer": "33.3269000",
+            "selling": "33.6503000",
+            "mid_rate": "33.4886000"
+          },
+          {
+            "period": "2026-06",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "32.6673000",
+            "buying_transfer": "32.7495000",
+            "selling": "33.0753000",
+            "mid_rate": "32.9125000"
+          },
+          {
+            "period": "2026-05",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "32.2722000",
+            "buying_transfer": "32.3493000",
+            "selling": "32.6716000",
+            "mid_rate": "32.5105000"
+          },
+          {
+            "period": "2026-04",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "32.1132000",
+            "buying_transfer": "32.1892000",
+            "selling": "32.5104000",
+            "mid_rate": "32.3498000"
+          },
+          {
+            "period": "2026-03",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "32.0332000",
+            "buying_transfer": "32.1058000",
+            "selling": "32.4249000",
+            "mid_rate": "32.2654000"
+          },
+          {
+            "period": "2026-02",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "31.0322000",
+            "buying_transfer": "31.1073000",
+            "selling": "31.4265000",
+            "mid_rate": "31.2669000"
+          },
+          {
+            "period": "2026-01",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "31.0276000",
+            "buying_transfer": "31.1097000",
+            "selling": "31.4338000",
+            "mid_rate": "31.2718000"
+          },
+          {
+            "period": "2025-12",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "31.3123000",
+            "buying_transfer": "31.3935000",
+            "selling": "31.7202000",
+            "mid_rate": "31.5569000"
+          },
+          {
+            "period": "2025-11",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "32.1494000",
+            "buying_transfer": "32.2321000",
+            "selling": "32.5634000",
+            "mid_rate": "32.3978000"
+          },
+          {
+            "period": "2025-10",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "32.3129000",
+            "buying_transfer": "32.3923000",
+            "selling": "32.7167000",
+            "mid_rate": "32.5546000"
+          }
+        ]
+      }
+    }
+  }
+}

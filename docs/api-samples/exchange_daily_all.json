@@ -1,0 +1,793 @@
+{
+  "_request": "https://gateway.api.bot.or.th/Stat-ExchangeRate/v2/DAILY_AVG_EXG_RATE/?start_period=2026-10-10&end_period=2026-10-20",
+  "_status": 200,
+  "body": {
+    "result": {
+      "timestamp": "2026-10-20 15:42:38",
+      "api": "Daily Weighted-average Interbank Exchange Rate - THB / USD",
+      "data": {
+        "data_header": {
+          "report_name_eng": "Rates of Exchange of Commercial Banks in Bangkok Metropolis (2002-present)",
+          "report_name_th": "อัตราแลกเปลี่ยนเฉลี่ยของธนาคารพาณิชย์ในกรุงเทพมหานคร (2545-ปัจจุบัน)",
+          "report_uoq_name_eng": "(Unit: Baht / 1 Unit of Foreign Currency)",
+          "report_uoq_name_th": "(หน่วย: บาท ต่อ 1 หน่วยเงินตราต่างประเทศ)",
+          "report_source_of_data": [
+            {
+              "source_of_data_eng": "Bank of Thailand",
+              "source_of_data_th": "ธนาคารแห่งประเทศไทย"
+            }
+          ],
+          "report_remark": [
+            {
+              "report_remark_eng": "Since Nov 16, 2015 the data regarding Buying Transfer Rate of PKR has been changed to Buying Rate using Foreign Exchange Rates (LSEG) with Bangkok Market Crossing.",
+              "report_remark_th": "ตั้งแต่วันที่ 16 พ.ย. 2558 ข้อมูลในอัตราซื้อเงินโอนของสกุล PKR ได้เปลี่ยนเป็นอัตราซื้อที่ใช้อัตราในตลาดต่างประเทศ (LSEG) คำนวณผ่านอัตราซื้อขายเงินดอลลาร์ สรอ. ในตลาดกรุงเทพฯ"
+            }
+          ],
+          "last_updated": "2026-10-19"
+        },
+        "data_detail": [
+          {
+            "period": "2026-10-19",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "33.2300000",
+            "buying_transfer": "33.3229000",
+            "selling": "33.6489000",
+            "mid_rate": "33.4859000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "GBP",
+            "currency_name_th": "อังกฤษ : ปอนด์สเตอร์ลิง (GBP)",
+            "currency_name_eng": "UNITED KINGDOM : POUND STERING (GBP)",
+            "buying_sight": "44.0670000",
+            "buying_transfer": "44.2028000",
+            "selling": "45.0119000",
+            "mid_rate": "44.6074000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "EUR",
+            "currency_name_th": "ยูโรโซน : ยูโร (EUR)",
+            "currency_name_eng": "EURO ZONE : EURO (EUR)",
+            "buying_sight": "37.0904000",
+            "buying_transfer": "37.1937000",
+            "selling": "37.8683000",
+            "mid_rate": "37.5310000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "JPY",
+            "currency_name_th": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+            "currency_name_eng": "JAPAN : YEN (100 YEN) (JPY) ",
+            "buying_sight": "20.7615000",
+            "buying_transfer": "20.8677000",
+            "selling": "21.5040000",
+            "mid_rate": "21.1859000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "HKD",
+            "currency_name_th": "ฮ่องกง : ดอลลาร์ (HKD) ",
+            "currency_name_eng": "HONG KONG : DOLLAR (HKD)",
+            "buying_sight": "4.2106000",
+            "buying_transfer": "4.2259000",
+            "selling": "4.3128000",
+            "mid_rate": "4.2694000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "MYR",
+            "currency_name_th": "มาเลเซีย : ริงกิต (MYR)",
+            "currency_name_eng": "MALAYSIA : RINGGIT (MYR)",
+            "buying_sight": "8.0610000",
+            "buying_transfer": "8.0995000",
+            "selling": "8.3182000",
+            "mid_rate": "8.2089000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "SGD",
+            "currency_name_th": "สิงคโปร์ : ดอลลาร์ (SGD) ",
+            "currency_name_eng": "SINGAPORE : DOLLAR (SGD)",
+            "buying_sight": "25.7722000",
+            "buying_transfer": "25.8461000",
+            "selling": "26.4223000",
+            "mid_rate": "26.1342000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "BND",
+            "currency_name_th": "บรูไนดารุสซาลาม : ดอลลาร์ (BND)",
+            "currency_name_eng": "BRUNEI : DOLLAR (BND) ",
+            "buying_sight": "25.7334000",
+            "buying_transfer": "25.8234000",
+            "selling": "26.5627000",
+            "mid_rate": "26.1931000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "PHP",
+            "currency_name_th": "ฟิลิปปินส์ : เปโซ (PHP) ",
+            "currency_name_eng": "PHILIPPINES : PESO (PHP) ",
+            "buying_sight": "0.5056000",
+            "buying_transfer": "0.5135000",
+            "selling": "0.5479000",
+            "mid_rate": "0.5307000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "IDR",
+            "currency_name_th": "อินโดนิเซีย : รูเปีย (1,000 รูเปีย) (IDR)",
+            "currency_name_eng": "INDONESIA : RUPIAH (1,000 RUPIAH) (IDR)",
+            "buying_sight": "1.6737000",
+            "buying_transfer": "1.7696000",
+            "selling": "1.9610000",
+            "mid_rate": "1.8653000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "INR",
+            "currency_name_th": "อินเดีย : รูปี (INR) ",
+            "currency_name_eng": "INDIA : RUPEE (INR)",
+            "buying_sight": "0.3183000",
+            "buying_transfer": "0.3268000",
+            "selling": "0.3846000",
+            "mid_rate": "0.3557000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "CHF",
+            "currency_name_th": "สวิสเซอร์แลนด์ : ฟรังก์ (CHF)",
+            "currency_name_eng": "SWITZERLAND : FRANC (CHF) ",
+            "buying_sight": "40.1565000",
+            "buying_transfer": "40.2569000",
+            "selling": "40.8164000",
+            "mid_rate": "40.5367000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "AUD",
+            "currency_name_th": "ออสเตรเลีย : ดอลลาร์ (AUD)",
+            "currency_name_eng": "AUSTRALIA : DOLLAR (AUD) ",
+            "buying_sight": "22.8329000",
+            "buying_transfer": "22.9072000",
+            "selling": "23.6615000",
+            "mid_rate": "23.2844000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "NZD",
+            "currency_name_th": "นิวซีแลนด์ : ดอลลาร์ (NZD)",
+            "currency_name_eng": "NEW ZEALAND : DOLLAR (NZD)",
+            "buying_sight": "18.5447000",
+            "buying_transfer": "18.6097000",
+            "selling": "19.2237000",
+            "mid_rate": "18.9167000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "CAD",
+            "currency_name_th": "แคนาดา : ดอลลาร์ (CAD)",
+            "currency_name_eng": "CANADA : DOLLAR (CAD)",
+            "buying_sight": "23.3632000",
+            "buying_transfer": "23.4381000",
+            "selling": "23.8050000",
+            "mid_rate": "23.6216000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "SEK",
+            "currency_name_th": "สวีเดน : โครนา (SEK)",
+            "currency_name_eng": "SWEDEN : KRONA (SEK)",
+            "buying_sight": "3.3252000",
+            "buying_transfer": "3.3414000",
+            "selling": "3.4148000",
+            "mid_rate": "3.3781000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "DKK",
+            "currency_name_th": "เดนมาร์ก : โครน (DKK)",
+            "currency_name_eng": "DENMARK : KRONE (DKK) ",
+            "buying_sight": "4.9649000",
+            "buying_transfer": "4.9803000",
+            "selling": "5.0735000",
+            "mid_rate": "5.0269000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "NOK",
+            "currency_name_th": "นอร์เวย์ : โครน (NOK) ",
+            "currency_name_eng": "NORWAY : KRONE (NOK)",
+            "buying_sight": "3.4976000",
+            "buying_transfer": "3.5111000",
+            "selling": "3.5873000",
+            "mid_rate": "3.5492000"
+          },
+          {
+            "period": "2026-10-19",
+            "currency_id": "CNY",
+            "currency_name_th": "จีน : หยวน เรนมินบิ (CNY)",
+            "currency_name_eng": "CHINA : YUAN RENMINBI (CNY)",
+            "buying_sight": "4.9159000",
+            "buying_transfer": "4.9493000",
+            "selling": "5.0764000",
+            "mid_rate": "5.0129000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "33.3535000",
+            "buying_transfer": "33.4246000",
+            "selling": "33.7455000",
+            "mid_rate": "33.5851000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "GBP",
+            "currency_name_th": "อังกฤษ : ปอนด์สเตอร์ลิง (GBP)",
+            "currency_name_eng": "UNITED KINGDOM : POUND STERING (GBP)",
+            "buying_sight": "43.8890000",
+            "buying_transfer": "44.0017000",
+            "selling": "44.7835000",
+            "mid_rate": "44.3926000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "EUR",
+            "currency_name_th": "ยูโรโซน : ยูโร (EUR)",
+            "currency_name_eng": "EURO ZONE : EURO (EUR)",
+            "buying_sight": "37.1731000",
+            "buying_transfer": "37.2648000",
+            "selling": "37.9065000",
+            "mid_rate": "37.5857000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "JPY",
+            "currency_name_th": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+            "currency_name_eng": "JAPAN : YEN (100 YEN) (JPY) ",
+            "buying_sight": "20.8770000",
+            "buying_transfer": "20.9560000",
+            "selling": "21.5581000",
+            "mid_rate": "21.2571000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "HKD",
+            "currency_name_th": "ฮ่องกง : ดอลลาร์ (HKD) ",
+            "currency_name_eng": "HONG KONG : DOLLAR (HKD)",
+            "buying_sight": "4.2331000",
+            "buying_transfer": "4.2474000",
+            "selling": "4.3139000",
+            "mid_rate": "4.2807000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "MYR",
+            "currency_name_th": "มาเลเซีย : ริงกิต (MYR)",
+            "currency_name_eng": "MALAYSIA : RINGGIT (MYR)",
+            "buying_sight": "8.1059000",
+            "buying_transfer": "8.1259000",
+            "selling": "8.3339000",
+            "mid_rate": "8.2299000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "SGD",
+            "currency_name_th": "สิงคโปร์ : ดอลลาร์ (SGD) ",
+            "currency_name_eng": "SINGAPORE : DOLLAR (SGD)",
+            "buying_sight": "25.8342000",
+            "buying_transfer": "25.8972000",
+            "selling": "26.4485000",
+            "mid_rate": "26.1729000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "BND",
+            "currency_name_th": "บรูไนดารุสซาลาม : ดอลลาร์ (BND)",
+            "currency_name_eng": "BRUNEI : DOLLAR (BND) ",
+            "buying_sight": "25.7047000",
+            "buying_transfer": "25.7947000",
+            "selling": "26.5451000",
+            "mid_rate": "26.1699000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "PHP",
+            "currency_name_th": "ฟิลิปปินส์ : เปโซ (PHP) ",
+            "currency_name_eng": "PHILIPPINES : PESO (PHP) ",
+            "buying_sight": "0.5067000",
+            "buying_transfer": "0.5152000",
+            "selling": "0.5489000",
+            "mid_rate": "0.5321000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "IDR",
+            "currency_name_th": "อินโดนิเซีย : รูเปีย (1,000 รูเปีย) (IDR)",
+            "currency_name_eng": "INDONESIA : RUPIAH (1,000 RUPIAH) (IDR)",
+            "buying_sight": "1.6895000",
+            "buying_transfer": "1.7859000",
+            "selling": "1.9717000",
+            "mid_rate": "1.8788000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "INR",
+            "currency_name_th": "อินเดีย : รูปี (INR) ",
+            "currency_name_eng": "INDIA : RUPEE (INR)",
+            "buying_sight": "0.3220000",
+            "buying_transfer": "0.3289000",
+            "selling": "0.3821000",
+            "mid_rate": "0.3555000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "CHF",
+            "currency_name_th": "สวิสเซอร์แลนด์ : ฟรังก์ (CHF)",
+            "currency_name_eng": "SWITZERLAND : FRANC (CHF) ",
+            "buying_sight": "39.9943000",
+            "buying_transfer": "40.0806000",
+            "selling": "40.6464000",
+            "mid_rate": "40.3635000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "AUD",
+            "currency_name_th": "ออสเตรเลีย : ดอลลาร์ (AUD)",
+            "currency_name_eng": "AUSTRALIA : DOLLAR (AUD) ",
+            "buying_sight": "22.9812000",
+            "buying_transfer": "23.0335000",
+            "selling": "23.7529000",
+            "mid_rate": "23.3932000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "NZD",
+            "currency_name_th": "นิวซีแลนด์ : ดอลลาร์ (NZD)",
+            "currency_name_eng": "NEW ZEALAND : DOLLAR (NZD)",
+            "buying_sight": "18.5289000",
+            "buying_transfer": "18.5901000",
+            "selling": "19.1771000",
+            "mid_rate": "18.8836000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "CAD",
+            "currency_name_th": "แคนาดา : ดอลลาร์ (CAD)",
+            "currency_name_eng": "CANADA : DOLLAR (CAD)",
+            "buying_sight": "23.3887000",
+            "buying_transfer": "23.4531000",
+            "selling": "23.8380000",
+            "mid_rate": "23.6456000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "SEK",
+            "currency_name_th": "สวีเดน : โครนา (SEK)",
+            "currency_name_eng": "SWEDEN : KRONA (SEK)",
+            "buying_sight": "3.3204000",
+            "buying_transfer": "3.3331000",
+            "selling": "3.3922000",
+            "mid_rate": "3.3627000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "DKK",
+            "currency_name_th": "เดนมาร์ก : โครน (DKK)",
+            "currency_name_eng": "DENMARK : KRONE (DKK) ",
+            "buying_sight": "4.9782000",
+            "buying_transfer": "4.9905000",
+            "selling": "5.0612000",
+            "mid_rate": "5.0259000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "NOK",
+            "currency_name_th": "นอร์เวย์ : โครน (NOK) ",
+            "currency_name_eng": "NORWAY : KRONE (NOK)",
+            "buying_sight": "3.4903000",
+            "buying_transfer": "3.5020000",
+            "selling": "3.5627000",
+            "mid_rate": "3.5324000"
+          },
+          {
+            "period": "2026-10-15",
+            "currency_id": "CNY",
+            "currency_name_th": "จีน : หยวน เรนมินบิ (CNY)",
+            "currency_name_eng": "CHINA : YUAN RENMINBI (CNY)",
+            "buying_sight": "4.9520000",
+            "buying_transfer": "4.9720000",
+            "selling": "5.0642000",
+            "mid_rate": "5.0181000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "33.3223000",
+            "buying_transfer": "33.3984000",
+            "selling": "33.7219000",
+            "mid_rate": "33.5602000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "GBP",
+            "currency_name_th": "อังกฤษ : ปอนด์สเตอร์ลิง (GBP)",
+            "currency_name_eng": "UNITED KINGDOM : POUND STERING (GBP)",
+            "buying_sight": "44.0001000",
+            "buying_transfer": "44.1115000",
+            "selling": "44.8904000",
+            "mid_rate": "44.5010000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "EUR",
+            "currency_name_th": "ยูโรโซน : ยูโร (EUR)",
+            "currency_name_eng": "EURO ZONE : EURO (EUR)",
+            "buying_sight": "37.1713000",
+            "buying_transfer": "37.2598000",
+            "selling": "37.8915000",
+            "mid_rate": "37.5757000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "JPY",
+            "currency_name_th": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+            "currency_name_eng": "JAPAN : YEN (100 YEN) (JPY) ",
+            "buying_sight": "20.8396000",
+            "buying_transfer": "20.9108000",
+            "selling": "21.5183000",
+            "mid_rate": "21.2146000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "HKD",
+            "currency_name_th": "ฮ่องกง : ดอลลาร์ (HKD) ",
+            "currency_name_eng": "HONG KONG : DOLLAR (HKD)",
+            "buying_sight": "4.2288000",
+            "buying_transfer": "4.2437000",
+            "selling": "4.3093000",
+            "mid_rate": "4.2765000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "MYR",
+            "currency_name_th": "มาเลเซีย : ริงกิต (MYR)",
+            "currency_name_eng": "MALAYSIA : RINGGIT (MYR)",
+            "buying_sight": "8.0915000",
+            "buying_transfer": "8.1125000",
+            "selling": "8.3219000",
+            "mid_rate": "8.2172000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "SGD",
+            "currency_name_th": "สิงคโปร์ : ดอลลาร์ (SGD) ",
+            "currency_name_eng": "SINGAPORE : DOLLAR (SGD)",
+            "buying_sight": "25.8847000",
+            "buying_transfer": "25.9449000",
+            "selling": "26.4838000",
+            "mid_rate": "26.2144000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "BND",
+            "currency_name_th": "บรูไนดารุสซาลาม : ดอลลาร์ (BND)",
+            "currency_name_eng": "BRUNEI : DOLLAR (BND) ",
+            "buying_sight": "25.7488000",
+            "buying_transfer": "25.8388000",
+            "selling": "26.5916000",
+            "mid_rate": "26.2152000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "PHP",
+            "currency_name_th": "ฟิลิปปินส์ : เปโซ (PHP) ",
+            "currency_name_eng": "PHILIPPINES : PESO (PHP) ",
+            "buying_sight": "0.5081000",
+            "buying_transfer": "0.5188000",
+            "selling": "0.5490000",
+            "mid_rate": "0.5339000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "IDR",
+            "currency_name_th": "อินโดนิเซีย : รูเปีย (1,000 รูเปีย) (IDR)",
+            "currency_name_eng": "INDONESIA : RUPIAH (1,000 RUPIAH) (IDR)",
+            "buying_sight": "1.6824000",
+            "buying_transfer": "1.7799000",
+            "selling": "1.9718000",
+            "mid_rate": "1.8759000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "INR",
+            "currency_name_th": "อินเดีย : รูปี (INR) ",
+            "currency_name_eng": "INDIA : RUPEE (INR)",
+            "buying_sight": "0.3227000",
+            "buying_transfer": "0.3276000",
+            "selling": "0.3777000",
+            "mid_rate": "0.3527000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "CHF",
+            "currency_name_th": "สวิสเซอร์แลนด์ : ฟรังก์ (CHF)",
+            "currency_name_eng": "SWITZERLAND : FRANC (CHF) ",
+            "buying_sight": "39.9999000",
+            "buying_transfer": "40.0764000",
+            "selling": "40.6101000",
+            "mid_rate": "40.3433000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "AUD",
+            "currency_name_th": "ออสเตรเลีย : ดอลลาร์ (AUD)",
+            "currency_name_eng": "AUSTRALIA : DOLLAR (AUD) ",
+            "buying_sight": "23.0376000",
+            "buying_transfer": "23.0973000",
+            "selling": "23.8184000",
+            "mid_rate": "23.4579000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "NZD",
+            "currency_name_th": "นิวซีแลนด์ : ดอลลาร์ (NZD)",
+            "currency_name_eng": "NEW ZEALAND : DOLLAR (NZD)",
+            "buying_sight": "18.5134000",
+            "buying_transfer": "18.5763000",
+            "selling": "19.1609000",
+            "mid_rate": "18.8686000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "CAD",
+            "currency_name_th": "แคนาดา : ดอลลาร์ (CAD)",
+            "currency_name_eng": "CANADA : DOLLAR (CAD)",
+            "buying_sight": "23.3700000",
+            "buying_transfer": "23.4336000",
+            "selling": "23.8020000",
+            "mid_rate": "23.6178000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "SEK",
+            "currency_name_th": "สวีเดน : โครนา (SEK)",
+            "currency_name_eng": "SWEDEN : KRONA (SEK)",
+            "buying_sight": "3.3281000",
+            "buying_transfer": "3.3416000",
+            "selling": "3.3985000",
+            "mid_rate": "3.3701000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "DKK",
+            "currency_name_th": "เดนมาร์ก : โครน (DKK)",
+            "currency_name_eng": "DENMARK : KRONE (DKK) ",
+            "buying_sight": "4.9840000",
+            "buying_transfer": "4.9959000",
+            "selling": "5.0623000",
+            "mid_rate": "5.0291000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "NOK",
+            "currency_name_th": "นอร์เวย์ : โครน (NOK) ",
+            "currency_name_eng": "NORWAY : KRONE (NOK)",
+            "buying_sight": "3.4858000",
+            "buying_transfer": "3.4975000",
+            "selling": "3.5570000",
+            "mid_rate": "3.5273000"
+          },
+          {
+            "period": "2026-10-14",
+            "currency_id": "CNY",
+            "currency_name_th": "จีน : หยวน เรนมินบิ (CNY)",
+            "currency_name_eng": "CHINA : YUAN RENMINBI (CNY)",
+            "buying_sight": "4.9501000",
+            "buying_transfer": "4.9704000",
+            "selling": "5.0590000",
+            "mid_rate": "5.0147000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "USD",
+            "currency_name_th": "สหรัฐอเมริกา : ดอลลาร์ (USD)",
+            "currency_name_eng": "USA : DOLLAR (USD) ",
+            "buying_sight": "33.2667000",
+            "buying_transfer": "33.3569000",
+            "selling": "33.6917000",
+            "mid_rate": "33.5243000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "GBP",
+            "currency_name_th": "อังกฤษ : ปอนด์สเตอร์ลิง (GBP)",
+            "currency_name_eng": "UNITED KINGDOM : POUND STERING (GBP)",
+            "buying_sight": "43.8542000",
+            "buying_transfer": "43.9850000",
+            "selling": "44.7917000",
+            "mid_rate": "44.3884000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "EUR",
+            "currency_name_th": "ยูโรโซน : ยูโร (EUR)",
+            "currency_name_eng": "EURO ZONE : EURO (EUR)",
+            "buying_sight": "37.1129000",
+            "buying_transfer": "37.2109000",
+            "selling": "37.8629000",
+            "mid_rate": "37.5369000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "JPY",
+            "currency_name_th": "ญี่ปุ่น : เยน (100 เยน) (JPY)",
+            "currency_name_eng": "JAPAN : YEN (100 YEN) (JPY) ",
+            "buying_sight": "20.7708000",
+            "buying_transfer": "20.8651000",
+            "selling": "21.4816000",
+            "mid_rate": "21.1734000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "HKD",
+            "currency_name_th": "ฮ่องกง : ดอลลาร์ (HKD) ",
+            "currency_name_eng": "HONG KONG : DOLLAR (HKD)",
+            "buying_sight": "4.2173000",
+            "buying_transfer": "4.2318000",
+            "selling": "4.3152000",
+            "mid_rate": "4.2735000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "MYR",
+            "currency_name_th": "มาเลเซีย : ริงกิต (MYR)",
+            "currency_name_eng": "MALAYSIA : RINGGIT (MYR)",
+            "buying_sight": "8.0707000",
+            "buying_transfer": "8.1062000",
+            "selling": "8.3246000",
+            "mid_rate": "8.2154000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "SGD",
+            "currency_name_th": "สิงคโปร์ : ดอลลาร์ (SGD) ",
+            "currency_name_eng": "SINGAPORE : DOLLAR (SGD)",
+            "buying_sight": "25.8193000",
+            "buying_transfer": "25.8898000",
+            "selling": "26.4383000",
+            "mid_rate": "26.1641000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "BND",
+            "currency_name_th": "บรูไนดารุสซาลาม : ดอลลาร์ (BND)",
+            "currency_name_eng": "BRUNEI : DOLLAR (BND) ",
+            "buying_sight": "25.7632000",
+            "buying_transfer": "25.8532000",
+            "selling": "26.5979000",
+            "mid_rate": "26.2256000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "PHP",
+            "currency_name_th": "ฟิลิปปินส์ : เปโซ (PHP) ",
+            "currency_name_eng": "PHILIPPINES : PESO (PHP) ",
+            "buying_sight": "0.5088000",
+            "buying_transfer": "0.5166000",
+            "selling": "0.5510000",
+            "mid_rate": "0.5338000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "IDR",
+            "currency_name_th": "อินโดนิเซีย : รูเปีย (1,000 รูเปีย) (IDR)",
+            "currency_name_eng": "INDONESIA : RUPIAH (1,000 RUPIAH) (IDR)",
+            "buying_sight": "1.6967000",
+            "buying_transfer": "1.7854000",
+            "selling": "1.9741000",
+            "mid_rate": "1.8798000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "INR",
+            "currency_name_th": "อินเดีย : รูปี (INR) ",
+            "currency_name_eng": "INDIA : RUPEE (INR)",
+            "buying_sight": "0.3187000",
+            "buying_transfer": "0.3213000",
+            "selling": "0.3795000",
+            "mid_rate": "0.3504000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "CHF",
+            "currency_name_th": "สวิสเซอร์แลนด์ : ฟรังก์ (CHF)",
+            "currency_name_eng": "SWITZERLAND : FRANC (CHF) ",
+            "buying_sight": "39.9331000",
+            "buying_transfer": "40.0316000",
+            "selling": "40.5808000",
+            "mid_rate": "40.3062000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "AUD",
+            "currency_name_th": "ออสเตรเลีย : ดอลลาร์ (AUD)",
+            "currency_name_eng": "AUSTRALIA : DOLLAR (AUD) ",
+            "buying_sight": "22.9282000",
+            "buying_transfer": "22.9966000",
+            "selling": "23.7475000",
+            "mid_rate": "23.3721000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "NZD",
+            "currency_name_th": "นิวซีแลนด์ : ดอลลาร์ (NZD)",
+            "currency_name_eng": "NEW ZEALAND : DOLLAR (NZD)",
+            "buying_sight": "18.4375000",
+            "buying_transfer": "18.5019000",
+            "selling": "19.1138000",
+            "mid_rate": "18.8079000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "CAD",
+            "currency_name_th": "แคนาดา : ดอลลาร์ (CAD)",
+            "currency_name_eng": "CANADA : DOLLAR (CAD)",
+            "buying_sight": "23.1979000",
+            "buying_transfer": "23.2681000",
+            "selling": "23.6260000",
+            "mid_rate": "23.4471000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "SEK",
+            "currency_name_th": "สวีเดน : โครนา (SEK)",
+            "currency_name_eng": "SWEDEN : KRONA (SEK)",
+            "buying_sight": "3.3046000",
+            "buying_transfer": "3.3205000",
+            "selling": "3.3935000",
+            "mid_rate": "3.3570000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "DKK",
+            "currency_name_th": "เดนมาร์ก : โครน (DKK)",
+            "currency_name_eng": "DENMARK : KRONE (DKK) ",
+            "buying_sight": "4.9662000",
+            "buying_transfer": "4.9810000",
+            "selling": "5.0726000",
+            "mid_rate": "5.0268000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "NOK",
+            "currency_name_th": "นอร์เวย์ : โครน (NOK) ",
+            "currency_name_eng": "NORWAY : KRONE (NOK)",
+            "buying_sight": "3.4525000",
+            "buying_transfer": "3.4658000",
+            "selling": "3.5420000",
+            "mid_rate": "3.5039000"
+          },
+          {
+            "period": "2026-10-12",
+            "currency_id": "CNY",
+            "currency_name_th": "จีน : หยวน เรนมินบิ (CNY)",
+            "currency_name_eng": "CHINA : YUAN RENMINBI (CNY)",
+            "buying_sight": "4.9215000",
+            "buying_transfer": "4.9525000",
+            "selling": "5.0672000",
+            "mid_rate": "5.0099000"
+          }
+        ]
+      }
+    }
+  }
+}

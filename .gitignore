@@ -1,0 +1,50 @@
+# Secrets — never commit
+.env
+lib/core/env/env.g.dart
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ / VS Code
+*.iml
+*.ipr
+*.iws
+.idea/
+# .vscode/ is kept so shared launch configs can be committed.
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication / obfuscation
+app.*.symbols
+app.*.map.json
+
+# Generated code — recreated by `dart run build_runner build -d` and
+# `flutter gen-l10n` (runs on `flutter pub get`).
+*.g.dart
+*.freezed.dart
+/lib/l10n/gen/
+
+# Android Studio / Kotlin caches
+/android/.kotlin/
+/android/app/debug
+/android/app/profile
+/android/app/release

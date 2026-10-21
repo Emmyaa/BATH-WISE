@@ -1,0 +1,52 @@
+{
+  "result": {
+    "api": "Loan Interest Rates of Commercial Banks (Percent per annum)",
+    "timestamp": "2026-10-20 14:10:00",
+    "data": {
+      "data_detail": [
+        {
+          "period": "2026-10-19",
+          "bank_type_name_th": "ธนาคารพาณิชย์จดทะเบียนในประเทศ",
+          "bank_type_name_eng": "Commercial Banks Registered in Thailand",
+          "bank_name_th": "ธนาคารตัวอย่าง จำกัด (มหาชน)",
+          "bank_name_eng": "Example Bank Public Company Limited ",
+          "mor": "6.9500",
+          "mlr": "6.5500",
+          "mrr": "6.9000",
+          "ceiling_rate": "",
+          "default_rate": "22.0000",
+          "creditcard_min": "16.0000",
+          "creditcard_max": "16.0000"
+        },
+        {
+          "period": "2026-10-20",
+          "bank_type_name_th": "สาขาธนาคารต่างประเทศ",
+          "bank_type_name_eng": "Foreign Bank Branches",
+          "bank_name_th": "ธนาคารต่างชาติตัวอย่าง",
+          "bank_name_eng": "Sample Foreign Bank",
+          "mor": "7.1250",
+          "mlr": "6.8750",
+          "mrr": "",
+          "ceiling_rate": "",
+          "default_rate": "",
+          "creditcard_min": "",
+          "creditcard_max": ""
+        },
+        {
+          "period": "2026-10-20",
+          "bank_type_name_th": "ธนาคารพาณิชย์จดทะเบียนในประเทศ",
+          "bank_type_name_eng": "Commercial Banks Registered in Thailand",
+          "bank_name_th": "ธนาคารตัวอย่าง จำกัด (มหาชน)",
+          "bank_name_eng": "Example Bank Public Company Limited",
+          "mor": "6.9500",
+          "mlr": "6.5000",
+          "mrr": "6.9000",
+          "ceiling_rate": "",
+          "default_rate": "22.0000",
+          "creditcard_min": "16.0000",
+          "creditcard_max": "16.0000"
+        }
+      ]
+    }
+  }
+}

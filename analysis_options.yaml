@@ -1,0 +1,21 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - lib/l10n/gen/**
+    - build/**
+    - android/**
+    - ios/**
+  errors:
+    # freezed puts @JsonKey on constructor params; the analyzer flags it wrongly.
+    invalid_annotation_target: ignore
+
+linter:
+  rules:
+    # Public API docs are overkill for an app (not a package).
+    public_member_api_docs: false
+
+plugins:
+  riverpod_lint: ^3.1.9
