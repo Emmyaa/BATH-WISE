@@ -25,6 +25,9 @@ class CurrencyInfo {
 }
 
 abstract final class Currencies {
+  /// The base currency of every BOT rate. Not in [bot].
+  static const thb = CurrencyInfo('THB', 'Thai Baht', 'บาท', region: 'TH');
+
   /// The 19 currencies in BOT's daily response, in BOT's order.
   static const bot = [
     CurrencyInfo('USD', 'US Dollar', 'ดอลลาร์สหรัฐฯ', region: 'US'),
@@ -60,7 +63,7 @@ abstract final class Currencies {
   ];
 
   static final Map<String, CurrencyInfo> _byCode = {
-    for (final c in bot) c.code: c,
+    for (final c in [thb, ...bot]) c.code: c,
   };
 
   static CurrencyInfo? byCode(String code) => _byCode[code];

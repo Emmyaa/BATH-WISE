@@ -16,12 +16,14 @@ class AnimatedDecimalText extends StatelessWidget {
     this.digits = 4,
     this.style,
     this.countUp = false,
+    this.duration = AppDurations.countUp,
   });
 
   final Decimal value;
   final int digits;
   final TextStyle? style;
   final bool countUp;
+  final Duration duration;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class AnimatedDecimalText extends StatelessWidget {
     if (MediaQuery.disableAnimationsOf(context)) return render(value);
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: countUp ? 0 : target, end: target),
-      duration: AppDurations.slow * 1.5,
+      duration: duration,
       curve: Curves.easeOutCubic,
       builder: (context, current, _) => render(
         current == target

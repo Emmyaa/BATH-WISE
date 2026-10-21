@@ -90,6 +90,15 @@ void main() {
     );
   });
 
+  testWidgets('rows can be activated from a screen reader', (tester) async {
+    await pumpRates(tester);
+
+    expect(
+      tester.getSemantics(tileFor('USD')),
+      matchesSemantics(isButton: true, hasTapAction: true),
+    );
+  });
+
   testWidgets('pull-to-refresh forces a refresh', (tester) async {
     await pumpRates(tester);
 

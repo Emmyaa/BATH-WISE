@@ -6,6 +6,7 @@ import 'package:bath_wise/core/widgets/change_indicator.dart';
 import 'package:bath_wise/core/widgets/currency_flag.dart';
 import 'package:bath_wise/core/widgets/glass_card.dart';
 import 'package:bath_wise/core/widgets/sparkline.dart';
+import 'package:bath_wise/features/rates/domain/currency_info.dart';
 import 'package:bath_wise/features/rates/domain/rate_enums.dart';
 import 'package:bath_wise/features/rates/domain/rate_quote.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,8 @@ class RateTile extends StatelessWidget {
 
     return Semantics(
       button: true,
+      // excludeSemantics drops the card's own tap action.
+      onTap: onTap,
       label: context.l10n.a11yRate(
         name,
         valueText,
@@ -111,5 +114,13 @@ extension LocalizedCurrencyName on BuildContext {
     final thai = Localizations.localeOf(this).languageCode == 'th';
     final rate = quote.current;
     return thai && rate.nameTh.isNotEmpty ? rate.nameTh : rate.nameEn;
+  }
+
+  /// Name of [code] from the static metadata (covers THB), or the code.
+  String currencyName(String code) {
+    final info = Currencies.byCode(code);
+    if (info == null) return code;
+    final thai = Localizations.localeOf(this).languageCode == 'th';
+    return thai ? info.nameTh : info.nameEn;
   }
 }

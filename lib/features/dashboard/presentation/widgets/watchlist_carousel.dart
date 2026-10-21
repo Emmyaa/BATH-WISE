@@ -60,6 +60,8 @@ class _WatchCard extends StatelessWidget {
     final valueText = mid == null ? '—' : context.decimals.format(mid);
     return Semantics(
       button: true,
+      // excludeSemantics drops the card's own tap action.
+      onTap: onTap,
       label: context.l10n.a11yRate(
         context.localizedName(quote),
         valueText,

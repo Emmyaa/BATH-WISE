@@ -40,6 +40,8 @@ class HeroRateCard extends StatelessWidget {
 
     return Semantics(
       button: true,
+      // excludeSemantics drops the card's own tap action.
+      onTap: onTap,
       label: l10n.a11yHeroRate(
         mid == null ? '—' : context.decimals.format(mid),
         describeChange(context, percent),

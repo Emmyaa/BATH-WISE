@@ -56,5 +56,18 @@
   "a11yUp": "เพิ่มขึ้น {percent}",
   "a11yDown": "ลดลง {percent}",
   "a11yUnchanged": "ไม่เปลี่ยนแปลง",
-  "a11yHeroRate": "ดอลลาร์สหรัฐ {rate} บาท {change} {status}"
+  "a11yHeroRate": "ดอลลาร์สหรัฐ {rate} บาท {change} {status}",
+  "converterFrom": "แปลงจาก",
+  "converterTo": "ได้รับ",
+  "converterSwap": "สลับสกุลเงิน",
+  "converterRateUsed": "อัตราที่ใช้",
+  "converterRateLine": "{source} · อัตรา{rateType} · {date}",
+  "converterNoRate": "ไม่มีอัตรา{rateType}สำหรับคู่สกุลเงินนี้",
+  "converterOtherCurrencies": "ในสกุลเงินอื่น",
+  "converterPickCurrency": "เลือกสกุลเงิน",
+  "converterChangeCurrency": "{label} {code} {name} เปลี่ยนสกุลเงิน",
+  "keypadDelete": "ลบ",
+  "keypadClear": "ล้าง",
+  "keypadDecimalPoint": "จุดทศนิยม",
+  "a11yConversion": "{amount} {from} เท่ากับ {result} {to}"
 }

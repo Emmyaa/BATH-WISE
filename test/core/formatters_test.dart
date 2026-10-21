@@ -39,6 +39,13 @@ void main() {
       expect(en.percent(d('-1.5')), '−1.50%');
     });
 
+    test('formatTyped groups keypad input and keeps it as typed', () {
+      expect(en.formatTyped(''), '0');
+      expect(en.formatTyped('1234567'), '1,234,567');
+      expect(en.formatTyped('1234.'), '1,234.');
+      expect(en.formatTyped('0.50'), '0.50');
+    });
+
     test('Thai uses the same separators', () {
       expect(DecimalFormatter('th').format(d('1234.5'), digits: 2), '1,234.50');
     });

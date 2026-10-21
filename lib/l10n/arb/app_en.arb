@@ -185,5 +185,67 @@
         "type": "String"
       }
     }
+  },
+  "converterFrom": "You convert",
+  "converterTo": "You get",
+  "converterSwap": "Swap currencies",
+  "converterRateUsed": "Rate used",
+  "converterRateLine": "{source} · {rateType} rate · {date}",
+  "@converterRateLine": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      },
+      "rateType": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "converterNoRate": "No {rateType} rate for this pair",
+  "@converterNoRate": {
+    "placeholders": {
+      "rateType": {
+        "type": "String"
+      }
+    }
+  },
+  "converterOtherCurrencies": "In other currencies",
+  "converterPickCurrency": "Choose currency",
+  "converterChangeCurrency": "{label} {code}, {name}. Change currency",
+  "@converterChangeCurrency": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "code": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "keypadDelete": "Delete",
+  "keypadClear": "Clear",
+  "keypadDecimalPoint": "Decimal point",
+  "a11yConversion": "{amount} {from} is {result} {to}",
+  "@a11yConversion": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "from": {
+        "type": "String"
+      },
+      "result": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
   }
 }
