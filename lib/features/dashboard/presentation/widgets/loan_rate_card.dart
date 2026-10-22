@@ -1,13 +1,12 @@
 import 'package:bath_wise/core/error/failure.dart';
 import 'package:bath_wise/core/l10n/l10n_context.dart';
 import 'package:bath_wise/core/theme/app_tokens.dart';
-import 'package:bath_wise/core/theme/app_typography.dart';
 import 'package:bath_wise/core/theme/theme_context.dart';
 import 'package:bath_wise/core/widgets/glass_card.dart';
 import 'package:bath_wise/core/widgets/skeleton.dart';
 import 'package:bath_wise/features/loan_rates/domain/loan_rate.dart';
 import 'package:bath_wise/features/loan_rates/presentation/average_loan_rates_provider.dart';
-import 'package:decimal/decimal.dart';
+import 'package:bath_wise/features/loan_rates/presentation/widgets/loan_metrics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -76,18 +75,7 @@ class _Metrics extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            for (final (label, value) in [
-              ('MOR', average.mor),
-              ('MLR', average.mlr),
-              ('MRR', average.mrr),
-            ])
-              Expanded(
-                child: _Metric(label: label, value: value),
-              ),
-          ],
-        ),
+        LoanMetricsRow(rate: average, large: true),
         const SizedBox(height: AppSpacing.xs),
         Text(
           '${context.l10n.loanCardSubtitle} · '
@@ -97,34 +85,6 @@ class _Metrics extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class _Metric extends StatelessWidget {
-  const new({required this.label, required this.value});
-
-  final String label;
-  final Decimal? value;
-
-  @override
-  Widget build(BuildContext context) {
-    final text = value == null
-        ? '—'
-        : '${context.decimals.format(value!, digits: 2)}%';
-    return MergeSemantics(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            label,
-            style: context.text.labelMedium?.copyWith(
-              color: context.colors.onSurfaceVariant,
-            ),
-          ),
-          Text(text, style: context.text.titleLarge?.tabular),
-        ],
-      ),
     );
   }
 }

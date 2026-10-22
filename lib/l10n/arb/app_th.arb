@@ -6,8 +6,6 @@
   "tabConverter": "แปลงเงิน",
   "tabWatchlist": "ติดตาม",
   "tabSettings": "ตั้งค่า",
-  "comingSoon": "เร็ว ๆ นี้",
-  "comingSoonBody": "หน้านี้กำลังพัฒนา",
   "settingsAppearance": "การแสดงผล",
   "themeSystem": "ตามระบบ",
   "themeLight": "สว่าง",
@@ -135,5 +133,17 @@
   "alertChannelDescription": "เมื่ออัตราแลกเปลี่ยนถึงเป้าหมายของคุณ",
   "alertNotifyRose": "{code} ขึ้นถึง {rate} บาท",
   "alertNotifyFell": "{code} ลงถึง {rate} บาท",
-  "alertNotifyBody": "ถึงเป้าหมาย{rateType} {target} แล้ว (อัตรา ธปท. วันที่ {date})"
+  "alertNotifyBody": "ถึงเป้าหมาย{rateType} {target} แล้ว (อัตรา ธปท. วันที่ {date})",
+  "loanMorFull": "อัตราดอกเบี้ยเงินเบิกเกินบัญชีขั้นต่ำ",
+  "loanMlrFull": "อัตราดอกเบี้ยเงินกู้ขั้นต่ำ",
+  "loanMrrFull": "อัตราดอกเบี้ยเงินกู้ลูกค้ารายย่อยชั้นดี",
+  "loanErrorTitle": "โหลดอัตราดอกเบี้ยเงินกู้ไม่สำเร็จ",
+  "loanAverageTitle": "ค่าเฉลี่ยตลาด",
+  "loanAsOf": "อัตรา ณ {date} · % ต่อปี",
+  "loanFilterAll": "ทุกธนาคาร",
+  "loanSortName": "ชื่อธนาคาร",
+  "loanSortLowest": "{rate} ต่ำสุด",
+  "loanNoBanks": "ไม่มีธนาคารประเภทนี้",
+  "loanGlossary": "MOR: เงินเบิกเกินบัญชีของลูกค้ารายใหญ่ชั้นดี MLR: เงินกู้แบบมีระยะเวลาของลูกค้ารายใหญ่ชั้นดี MRR: เงินกู้ของลูกค้ารายย่อยชั้นดี ดอกเบี้ยเงินกู้จริงมักกำหนดเป็นอัตราเหล่านี้บวกหรือลบส่วนต่าง",
+  "a11yLoanBank": "{bank} {type} MOR {mor} MLR {mlr} MRR {mrr} ต่อปี"
 }

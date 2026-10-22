@@ -6,8 +6,6 @@
   "tabConverter": "Convert",
   "tabWatchlist": "Watchlist",
   "tabSettings": "Settings",
-  "comingSoon": "Coming soon",
-  "comingSoonBody": "This screen is being built.",
   "settingsAppearance": "Appearance",
   "themeSystem": "System",
   "themeLight": "Light",
@@ -526,6 +524,51 @@
         "type": "String"
       },
       "date": {
+        "type": "String"
+      }
+    }
+  },
+  "loanMorFull": "Minimum Overdraft Rate",
+  "loanMlrFull": "Minimum Loan Rate",
+  "loanMrrFull": "Minimum Retail Rate",
+  "loanErrorTitle": "Couldn't load loan rates",
+  "loanAverageTitle": "Market average",
+  "loanAsOf": "Rates as of {date} · % per year",
+  "@loanAsOf": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "loanFilterAll": "All banks",
+  "loanSortName": "Bank name",
+  "loanSortLowest": "Lowest {rate}",
+  "@loanSortLowest": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "loanNoBanks": "No banks of this type.",
+  "loanGlossary": "MOR: overdrafts for large business customers. MLR: term loans for large business customers. MRR: loans for good retail customers. Actual loan rates are usually quoted as one of these plus or minus a margin.",
+  "a11yLoanBank": "{bank}, {type}. MOR {mor}, MLR {mlr}, MRR {mrr}, percent per year",
+  "@a11yLoanBank": {
+    "placeholders": {
+      "bank": {
+        "type": "String"
+      },
+      "type": {
+        "type": "String"
+      },
+      "mor": {
+        "type": "String"
+      },
+      "mlr": {
+        "type": "String"
+      },
+      "mrr": {
         "type": "String"
       }
     }

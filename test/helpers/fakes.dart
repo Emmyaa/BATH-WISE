@@ -141,15 +141,23 @@ class FakeHolidayRepository implements HolidayRepository {
 }
 
 class FakeLoanRatesRepository implements LoanRatesRepository {
-  new([this.result = const Err(UnauthorizedFailure('403'))]);
+  new([this.result = const Err(UnauthorizedFailure('403')), this.average]);
 
-  final Result<LoanRatesSnapshot> result;
+  /// What [getLatest] returns; replace between calls.
+  Result<LoanRatesSnapshot> result;
+
+  /// Returned for [LoanRateKind.average] when set, else [result].
+  Result<LoanRatesSnapshot>? average;
+  bool? lastForceRefresh;
 
   @override
   Future<Result<LoanRatesSnapshot>> getLatest(
     LoanRateKind kind, {
     bool forceRefresh = false,
-  }) async => result;
+  }) async {
+    lastForceRefresh = forceRefresh;
+    return kind == LoanRateKind.average ? average ?? result : result;
+  }
 }
 
 /// In-memory watchlist and alerts with the same semantics as the Drift
