@@ -45,14 +45,20 @@ class ErrorStateView extends StatelessWidget {
 }
 
 class EmptyStateView extends StatelessWidget {
-  const new({required this.icon, required this.message, super.key});
+  const new({
+    required this.icon,
+    required this.message,
+    super.key,
+    this.action,
+  });
 
   final IconData icon;
   final String message;
+  final Widget? action;
 
   @override
   Widget build(BuildContext context) =>
-      _CenteredMessage(icon: icon, message: message);
+      _CenteredMessage(icon: icon, message: message, action: action);
 }
 
 class _CenteredMessage extends StatelessWidget {

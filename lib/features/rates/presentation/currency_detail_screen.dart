@@ -14,6 +14,8 @@ import 'package:bath_wise/features/rates/presentation/latest_rates_view_model.da
 import 'package:bath_wise/features/rates/presentation/widgets/rate_tile.dart';
 import 'package:bath_wise/features/rates/presentation/widgets/rate_type_selector.dart';
 import 'package:bath_wise/features/rates/presentation/widgets/rates_status.dart';
+import 'package:bath_wise/features/watchlist/presentation/watchlist_codes_provider.dart';
+import 'package:bath_wise/features/watchlist/presentation/watchlist_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -31,7 +33,10 @@ class CurrencyDetailScreen extends ConsumerWidget {
     final quote = snapshot?.quoteFor(code);
 
     return Scaffold(
-      appBar: AppBar(title: Text(code)),
+      appBar: AppBar(
+        title: Text(code),
+        actions: [if (quote != null) _WatchlistToggle(code: code)],
+      ),
       body: quote == null
           ? EmptyStateView(
               icon: Icons.currency_exchange_rounded,
@@ -64,6 +69,47 @@ class CurrencyDetailScreen extends ConsumerWidget {
                 _RatesTable(quote: quote),
               ],
             ),
+    );
+  }
+}
+
+/// Star: adds [code] to the watchlist, or removes it (with undo).
+class _WatchlistToggle extends ConsumerWidget {
+  const new({required this.code});
+
+  final String code;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = context.l10n;
+    final listed = ref.watch(watchlistCodesProvider).contains(code);
+    final viewModel = ref.read(watchlistViewModelProvider.notifier);
+    return IconButton(
+      isSelected: listed,
+      tooltip: listed ? l10n.watchlistToggleRemove : l10n.watchlistToggleAdd,
+      icon: const Icon(Icons.star_outline_rounded),
+      selectedIcon: Icon(Icons.star_rounded, color: context.colors.primary),
+      onPressed: () async {
+        if (!listed) {
+          await viewModel.add(code);
+          return;
+        }
+        final messenger = ScaffoldMessenger.of(context);
+        final removed = await viewModel.remove(code);
+        if (removed == null) return;
+        messenger
+          ..clearSnackBars()
+          ..showSnackBar(
+            SnackBar(
+              content: Text(l10n.watchlistRemoved(code)),
+              persist: false,
+              action: SnackBarAction(
+                label: l10n.undo,
+                onPressed: () => viewModel.undoRemove(removed),
+              ),
+            ),
+          );
+      },
     );
   }
 }

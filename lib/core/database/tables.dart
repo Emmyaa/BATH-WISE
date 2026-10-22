@@ -86,3 +86,36 @@ class FetchLogs extends Table {
   @override
   Set<Column<Object>> get primaryKey => {key};
 }
+
+/// The user's watchlist; [position] is the display order (0 first).
+@DataClassName('WatchlistRow')
+class WatchlistItems extends Table {
+  TextColumn get currencyCode => text()();
+  IntColumn get position => integer()();
+
+  @override
+  Set<Column<Object>> get primaryKey => {currencyCode};
+}
+
+/// One-shot rate alerts. A triggered alert keeps what triggered it and
+/// stays disabled until the user re-arms it.
+@DataClassName('RateAlertRow')
+class RateAlerts extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get currencyCode => text()();
+
+  /// `AlertDirection.name`: `above` or `below`.
+  TextColumn get direction => text()();
+  TextColumn get target => text().map(const DecimalConverter())();
+
+  /// `RateType.name`.
+  TextColumn get rateType => text()();
+  BoolColumn get enabled => boolean().withDefault(const Constant(true))();
+  DateTimeColumn get createdAt => dateTime()();
+  DateTimeColumn get triggeredAt => dateTime().nullable()();
+  TextColumn get triggeredRate =>
+      text().map(const DecimalConverter()).nullable()();
+
+  /// BOT period of the rate that triggered the alert.
+  DateTimeColumn get triggeredPeriod => dateTime().nullable()();
+}
