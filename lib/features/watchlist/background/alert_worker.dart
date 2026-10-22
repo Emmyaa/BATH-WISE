@@ -8,6 +8,8 @@ import 'package:bath_wise/features/market_calendar/data/holiday_local_data_sourc
 import 'package:bath_wise/features/market_calendar/data/market_calendar_providers.dart';
 import 'package:bath_wise/features/market_calendar/domain/holiday.dart';
 import 'package:bath_wise/features/market_calendar/domain/holiday_repository.dart';
+import 'package:bath_wise/features/settings/data/prefs_settings_store.dart';
+import 'package:bath_wise/features/settings/presentation/settings_controller.dart';
 import 'package:bath_wise/features/watchlist/data/watchlist_providers.dart';
 import 'package:bath_wise/features/watchlist/domain/alert_check.dart';
 import 'package:flutter/foundation.dart';
@@ -26,7 +28,15 @@ void alertWorkerDispatcher() {
   Workmanager().executeTask((task, _) async {
     if (task != alertCheckTask) return true;
     await initializeDateFormatting();
-    final container = ProviderContainer(overrides: alertWorkerOverrides());
+    final container = ProviderContainer(
+      overrides: [
+        ...alertWorkerOverrides(),
+        // For the notification language.
+        settingsStoreProvider.overrideWithValue(
+          await PrefsSettingsStore.open(),
+        ),
+      ],
+    );
     try {
       await container.read(alertCheckProvider).run();
     } on Object catch (e, s) {

@@ -37,38 +37,55 @@ class CurrencyDetailScreen extends ConsumerWidget {
         title: Text(code),
         actions: [if (quote != null) _WatchlistToggle(code: code)],
       ),
-      body: quote == null
-          ? EmptyStateView(
-              icon: Icons.currency_exchange_rounded,
-              message: context.l10n.errorNoData,
-            )
-          : ListView(
-              padding: AppSpacing.screen.add(
-                const EdgeInsets.only(bottom: AppSpacing.xl),
-              ),
-              children: [
-                _Header(quote: quote, heroTag: heroTag ?? 'detail-$code'),
-                const SizedBox(height: AppSpacing.sm),
-                RatesStatusLines(
-                  snapshot: snapshot!,
-                  style: context.text.bodySmall?.copyWith(
-                    color: context.colors.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: AppSpacing.md),
-                DegradedDataBanner(snapshot: snapshot),
-                const SizedBox(height: AppSpacing.md),
-                CurrencyChartSection(
-                  code: code,
-                  compareCandidates: [
-                    for (final q in snapshot.quotes)
-                      if (q.currencyCode != code) q.currencyCode,
-                  ],
-                ),
-                const SizedBox(height: AppSpacing.md),
-                _RatesTable(quote: quote),
-              ],
-            ),
+      body: CurrencyDetailView(code: code, heroTag: heroTag),
+    );
+  }
+}
+
+/// The body of Currency Detail, also used as the detail pane of the
+/// Rates screen on wide layouts.
+class CurrencyDetailView extends ConsumerWidget {
+  const new({required this.code, super.key, this.heroTag});
+
+  final String code;
+  final Object? heroTag;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final snapshot = ref.watch(latestRatesViewModelProvider).value;
+    final quote = snapshot?.quoteFor(code);
+    if (snapshot == null || quote == null) {
+      return EmptyStateView(
+        icon: Icons.currency_exchange_rounded,
+        message: context.l10n.errorNoData,
+      );
+    }
+    return ListView(
+      padding: AppSpacing.screen.add(
+        const EdgeInsets.only(bottom: AppSpacing.xl),
+      ),
+      children: [
+        _Header(quote: quote, heroTag: heroTag ?? 'detail-$code'),
+        const SizedBox(height: AppSpacing.sm),
+        RatesStatusLines(
+          snapshot: snapshot,
+          style: context.text.bodySmall?.copyWith(
+            color: context.colors.onSurfaceVariant,
+          ),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        DegradedDataBanner(snapshot: snapshot),
+        const SizedBox(height: AppSpacing.md),
+        CurrencyChartSection(
+          code: code,
+          compareCandidates: [
+            for (final q in snapshot.quotes)
+              if (q.currencyCode != code) q.currencyCode,
+          ],
+        ),
+        const SizedBox(height: AppSpacing.md),
+        _RatesTable(quote: quote),
+      ],
     );
   }
 }

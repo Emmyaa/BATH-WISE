@@ -12,6 +12,7 @@ class RateTypeSelector extends StatelessWidget {
     required this.onSelected,
     super.key,
     this.midOnly = false,
+    this.padding = AppSpacing.screen,
   });
 
   final RateType selected;
@@ -20,12 +21,16 @@ class RateTypeSelector extends StatelessWidget {
   /// ECB fallback data only has mid rates.
   final bool midOnly;
 
+  /// Outer padding of the scrolling row; full-width screens use the
+  /// screen gutters.
+  final EdgeInsetsGeometry padding;
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: AppSpacing.screen,
+      padding: padding,
       child: Row(
         children: [
           for (final type in RateType.values)

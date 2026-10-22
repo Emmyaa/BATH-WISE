@@ -1,7 +1,9 @@
 import 'package:bath_wise/features/rates/domain/rate_enums.dart';
 import 'package:bath_wise/features/rates/domain/rate_quote.dart';
 import 'package:bath_wise/features/rates/presentation/latest_rates_view_model.dart';
+import 'package:bath_wise/features/settings/presentation/settings_controller.dart';
 import 'package:decimal/decimal.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -16,6 +18,9 @@ abstract class RatesListState with _$RatesListState {
     @Default('') String query,
     @Default(RatesSort.defaultOrder) RatesSort sort,
     @Default(RateType.mid) RateType rateType,
+
+    /// Shown in the detail pane on wide layouts.
+    @Default('USD') String selectedCode,
   }) = _RatesListState;
 }
 
@@ -24,13 +29,24 @@ abstract class RatesListState with _$RatesListState {
 @Riverpod(keepAlive: true)
 class RatesListViewModel extends _$RatesListViewModel {
   @override
-  RatesListState build() => const RatesListState();
+  RatesListState build() {
+    // Follow the default from Settings, now and when it changes.
+    ref.listen(
+      settingsControllerProvider.select((s) => s.defaultRateType),
+      (_, type) => state = state.copyWith(rateType: type),
+    );
+    return RatesListState(
+      rateType: ref.read(settingsControllerProvider).defaultRateType,
+    );
+  }
 
   void search(String query) => state = state.copyWith(query: query);
 
   void sortBy(RatesSort sort) => state = state.copyWith(sort: sort);
 
   void showRateType(RateType type) => state = state.copyWith(rateType: type);
+
+  void select(String code) => state = state.copyWith(selectedCode: code);
 }
 
 /// The quotes to show for the current search and sort, or null until the

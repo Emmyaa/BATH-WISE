@@ -4,8 +4,10 @@ import 'package:bath_wise/features/rates/domain/currency_info.dart';
 import 'package:bath_wise/features/rates/domain/rate_enums.dart';
 import 'package:bath_wise/features/rates/domain/rate_models.dart';
 import 'package:bath_wise/features/rates/presentation/latest_rates_view_model.dart';
+import 'package:bath_wise/features/settings/presentation/settings_controller.dart';
 import 'package:bath_wise/features/watchlist/presentation/watchlist_codes_provider.dart';
 import 'package:decimal/decimal.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -29,8 +31,17 @@ class ConverterViewModel extends _$ConverterViewModel {
   static final quickAmounts = [100, 1000, 10000];
 
   @override
-  ConverterState build() =>
-      ConverterState(input: AmountInput.preset(Decimal.fromInt(100)));
+  ConverterState build() {
+    // Follow the default from Settings, now and when it changes.
+    ref.listen(
+      settingsControllerProvider.select((s) => s.defaultRateType),
+      (_, type) => state = state.copyWith(rateType: type),
+    );
+    return ConverterState(
+      input: AmountInput.preset(Decimal.fromInt(100)),
+      rateType: ref.read(settingsControllerProvider).defaultRateType,
+    );
+  }
 
   void typeDigit(int digit) => _edit(state.input.typeDigit(digit));
 

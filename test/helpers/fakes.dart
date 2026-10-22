@@ -19,6 +19,9 @@ import 'package:bath_wise/features/rates/domain/fx_repository.dart';
 import 'package:bath_wise/features/rates/domain/rate_enums.dart';
 import 'package:bath_wise/features/rates/domain/rate_models.dart';
 import 'package:bath_wise/features/rates/domain/rate_quote.dart';
+import 'package:bath_wise/features/settings/domain/app_settings.dart';
+import 'package:bath_wise/features/settings/domain/device_auth.dart';
+import 'package:bath_wise/features/settings/presentation/settings_controller.dart';
 import 'package:bath_wise/features/watchlist/data/watchlist_providers.dart';
 import 'package:bath_wise/features/watchlist/domain/alert_check.dart';
 import 'package:bath_wise/features/watchlist/domain/rate_alert.dart';
@@ -367,6 +370,35 @@ RateAlert testAlert({
   triggeredAt: triggeredAt,
 );
 
+class InMemorySettingsStore implements SettingsStore {
+  new([this.saved = const AppSettings()]);
+
+  AppSettings saved;
+
+  @override
+  AppSettings read() => saved;
+
+  @override
+  Future<void> write(AppSettings settings) async => saved = settings;
+}
+
+class FakeDeviceAuth implements DeviceAuth {
+  new({this.available = true, this.succeeds = true});
+
+  bool available;
+  bool succeeds;
+  final reasons = <String>[];
+
+  @override
+  Future<bool> isAvailable() async => available;
+
+  @override
+  Future<bool> authenticate(String reason) async {
+    reasons.add(reason);
+    return succeeds;
+  }
+}
+
 /// Overrides every provider that would touch the network, disk or clock.
 List<Override> appOverrides({
   required FxRepository fx,
@@ -376,9 +408,15 @@ List<Override> appOverrides({
   WatchlistRepository? watchlist,
   AlertNotifier? notifier,
   AlertScheduler? scheduler,
+  SettingsStore? settings,
+  DeviceAuth? deviceAuth,
 }) {
   final holidayRepo = FakeHolidayRepository(holidays);
   return [
+    settingsStoreProvider.overrideWithValue(
+      settings ?? InMemorySettingsStore(),
+    ),
+    deviceAuthProvider.overrideWithValue(deviceAuth ?? FakeDeviceAuth()),
     watchlistRepositoryProvider.overrideWithValue(
       watchlist ?? FakeWatchlistRepository(),
     ),

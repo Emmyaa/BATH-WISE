@@ -12,11 +12,14 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 /// Rate-alert notifications via flutter_local_notifications.
 ///
 /// Works without a `BuildContext`, so the background worker can use it:
-/// text is localized with the device locale.
+/// text follows the app's language setting, else the device's.
 class LocalAlertNotifier implements AlertNotifier {
-  new(this._plugin);
+  new(this._plugin, {required this._languageCode});
 
   final FlutterLocalNotificationsPlugin _plugin;
+
+  /// The language chosen in Settings; null follows the device.
+  final String? Function() _languageCode;
   Future<void>? _initialized;
 
   @override
@@ -70,7 +73,7 @@ class LocalAlertNotifier implements AlertNotifier {
   @override
   Future<void> show(List<AlertTrigger> triggers) async {
     await initialize();
-    final locale = _deviceLocale();
+    final locale = _locale(_languageCode());
     final l10n = lookupAppLocalizations(locale);
     final tag = locale.toLanguageTag();
     final text = AlertNotificationText(
@@ -100,7 +103,8 @@ class LocalAlertNotifier implements AlertNotifier {
     }
   }
 
-  static Locale _deviceLocale() {
+  static Locale _locale(String? chosen) {
+    if (chosen != null) return Locale(chosen);
     final device = PlatformDispatcher.instance.locale;
     final supported = AppLocalizations.supportedLocales.any(
       (l) => l.languageCode == device.languageCode,

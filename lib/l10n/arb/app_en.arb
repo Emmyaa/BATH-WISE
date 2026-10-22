@@ -572,5 +572,31 @@
         "type": "String"
       }
     }
-  }
+  },
+  "settingsLanguage": "Language",
+  "languageSystem": "System",
+  "languageThai": "ไทย",
+  "languageEnglish": "English",
+  "settingsRates": "Rates",
+  "settingsDefaultRateType": "Default rate type",
+  "settingsDefaultRateTypeHint": "Rates and Converter start with this rate.",
+  "settingsSecurity": "Security",
+  "settingsAppLock": "App lock",
+  "settingsAppLockHint": "Ask for biometrics or your passcode when opening BathWise, and after a minute away.",
+  "settingsAppLockUnavailable": "Set up a screen lock or biometrics on this device to use this.",
+  "settingsAppLockFailed": "Couldn't confirm it's you, so the app lock wasn't changed.",
+  "lockTitle": "BathWise is locked",
+  "lockUnlock": "Unlock",
+  "lockReason": "Unlock BathWise",
+  "lockReasonSettings": "Confirm to change the app lock",
+  "settingsDataSources": "Data sources",
+  "sourceExchangeTitle": "Exchange rates",
+  "sourceExchangeBody": "Bank of Thailand official daily averages, published business days at 18:00 Bangkok time.",
+  "sourceLoanTitle": "Loan rates",
+  "sourceLoanBody": "Bank of Thailand, published business days at 14:00 Bangkok time.",
+  "sourceHolidaysTitle": "Bank holidays",
+  "sourceHolidaysBody": "Bank of Thailand's financial institutions' holiday calendar, used to explain days without new rates.",
+  "sourceEcbTitle": "Fallback and cross rates",
+  "sourceEcbBody": "European Central Bank reference rates via Frankfurter: used when BOT is unavailable (mid rate only) and between two foreign currencies.",
+  "settingsDisclaimer": "Rates are for information only and may differ from what your bank charges. Data is saved on this device and refreshed after each release."
 }

@@ -8,6 +8,7 @@ import 'package:bath_wise/core/widgets/state_views.dart';
 import 'package:bath_wise/features/rates/domain/rate_enums.dart';
 import 'package:bath_wise/features/rates/domain/rate_models.dart';
 import 'package:bath_wise/features/rates/domain/rate_quote.dart';
+import 'package:bath_wise/features/rates/presentation/currency_detail_screen.dart';
 import 'package:bath_wise/features/rates/presentation/latest_rates_view_model.dart';
 import 'package:bath_wise/features/rates/presentation/rates_list_view_model.dart';
 import 'package:bath_wise/features/rates/presentation/widgets/rate_tile.dart';
@@ -32,7 +33,7 @@ class RatesScreen extends ConsumerWidget {
       body: AnimatedSwitcher(
         duration: AppDurations.medium,
         child: switch (rates) {
-          AsyncValue(hasValue: true, :final value) => _RatesContent(value!),
+          AsyncValue(hasValue: true, :final value) => _RatesLayout(value!),
           AsyncValue(error: final error?) => ErrorStateView(
             error: error,
             onRetry: ref.read(latestRatesViewModelProvider.notifier).retry,
@@ -44,10 +45,62 @@ class RatesScreen extends ConsumerWidget {
   }
 }
 
-class _RatesContent extends ConsumerWidget {
+/// Phones push Currency Detail; wide screens (tablets, landscape) show
+/// it in a pane next to the list instead.
+class _RatesLayout extends ConsumerWidget {
   const new(this.snapshot);
 
   final RatesSnapshot snapshot;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < AppBreakpoints.expanded) {
+          return _RatesContent(
+            snapshot,
+            onOpen: (code, heroTag) =>
+                context.push(AppRoutes.currency(code), extra: heroTag),
+          );
+        }
+        final selected = ref.watch(
+          ratesListViewModelProvider.select((s) => s.selectedCode),
+        );
+        return Row(
+          children: [
+            SizedBox(
+              width: 400,
+              child: _RatesContent(
+                snapshot,
+                selectedCode: selected,
+                onOpen: (code, _) =>
+                    ref.read(ratesListViewModelProvider.notifier).select(code),
+              ),
+            ),
+            const VerticalDivider(width: 1),
+            Expanded(
+              // Keyed so the chart's range and compare state reset per
+              // currency, as when pushing the detail screen.
+              child: CurrencyDetailView(
+                key: ValueKey(selected),
+                code: selected,
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class _RatesContent extends ConsumerWidget {
+  const new(this.snapshot, {required this.onOpen, this.selectedCode});
+
+  final RatesSnapshot snapshot;
+  final void Function(String code, Object heroTag) onOpen;
+
+  /// Marked in the list when a detail pane shows it.
+  final String? selectedCode;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -117,17 +170,32 @@ class _RatesContent extends ConsumerWidget {
                 itemBuilder: (context, i) {
                   final code = quotes[i].currencyCode;
                   final heroTag = 'rates-flag-$code';
+                  final tile = RateTile(
+                    quote: quotes[i],
+                    rateType: rateType,
+                    heroTag: heroTag,
+                    onTap: () => onOpen(code, heroTag),
+                  );
                   return KeyedSubtree(
                     key: ValueKey(code),
-                    child: RateTile(
-                      quote: quotes[i],
-                      rateType: rateType,
-                      heroTag: heroTag,
-                      onTap: () => context.push(
-                        AppRoutes.currency(code),
-                        extra: heroTag,
-                      ),
-                    ).entrance(context, i),
+                    child:
+                        (code == selectedCode
+                                ? Semantics(
+                                    selected: true,
+                                    child: DecoratedBox(
+                                      position: DecorationPosition.foreground,
+                                      decoration: BoxDecoration(
+                                        borderRadius: AppRadius.card,
+                                        border: Border.all(
+                                          color: context.colors.primary,
+                                          width: 2,
+                                        ),
+                                      ),
+                                      child: tile,
+                                    ),
+                                  )
+                                : tile)
+                            .entrance(context, i),
                   );
                 },
               ),

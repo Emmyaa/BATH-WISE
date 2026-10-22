@@ -1,6 +1,7 @@
 import 'package:bath_wise/core/database/app_database.dart';
 import 'package:bath_wise/core/time/clock.dart';
 import 'package:bath_wise/features/rates/data/rates_providers.dart';
+import 'package:bath_wise/features/settings/presentation/settings_controller.dart';
 import 'package:bath_wise/features/watchlist/background/alert_worker.dart';
 import 'package:bath_wise/features/watchlist/data/local_alert_notifier.dart';
 import 'package:bath_wise/features/watchlist/data/watchlist_repository_impl.dart';
@@ -18,8 +19,10 @@ WatchlistRepository watchlistRepository(Ref ref) => WatchlistRepositoryImpl(
 );
 
 @Riverpod(keepAlive: true)
-AlertNotifier alertNotifications(Ref ref) =>
-    LocalAlertNotifier(FlutterLocalNotificationsPlugin());
+AlertNotifier alertNotifications(Ref ref) => LocalAlertNotifier(
+  FlutterLocalNotificationsPlugin(),
+  languageCode: () => ref.read(settingsControllerProvider).languageCode,
+);
 
 @Riverpod(keepAlive: true)
 AlertScheduler alertScheduler(Ref ref) => WorkmanagerAlertScheduler();

@@ -1,5 +1,6 @@
 package com.example.bath_wise
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 
-class MainActivity : FlutterActivity()
+// FragmentActivity: local_auth shows the biometric prompt as a fragment.
+class MainActivity : FlutterFragmentActivity()

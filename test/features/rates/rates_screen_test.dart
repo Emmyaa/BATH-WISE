@@ -2,6 +2,7 @@ import 'package:bath_wise/core/error/failure.dart';
 import 'package:bath_wise/core/error/result.dart';
 import 'package:bath_wise/core/theme/app_theme.dart';
 import 'package:bath_wise/features/rates/domain/rate_enums.dart';
+import 'package:bath_wise/features/rates/presentation/currency_detail_screen.dart';
 import 'package:bath_wise/features/rates/presentation/rates_screen.dart';
 import 'package:bath_wise/features/rates/presentation/widgets/rate_tile.dart';
 import 'package:bath_wise/l10n/gen/app_localizations.dart';
@@ -14,9 +15,12 @@ import '../../helpers/fakes.dart';
 void main() {
   late FakeFxRepository repo;
 
-  Future<void> pumpRates(WidgetTester tester) async {
+  Future<void> pumpRates(
+    WidgetTester tester, {
+    Size size = const Size(420, 1600),
+  }) async {
     tester.view
-      ..physicalSize = const Size(420, 1600)
+      ..physicalSize = size
       ..devicePixelRatio = 1;
     addTearDown(tester.view.reset);
     await tester.pumpWidget(
@@ -150,5 +154,25 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(tileFor('USD'), findsOneWidget);
+  });
+
+  testWidgets('wide screens show the detail next to the list', (tester) async {
+    await pumpRates(tester, size: const Size(1200, 900));
+
+    // USD is preselected in the pane: its name shows in the list tile and
+    // in the detail header.
+    expect(find.byType(CurrencyDetailView), findsOneWidget);
+    expect(find.text("Today's rates"), findsOneWidget);
+    expect(
+      tester.widget<CurrencyDetailView>(find.byType(CurrencyDetailView)).code,
+      'USD',
+    );
+
+    await tester.tap(tileFor('EUR'));
+    await tester.pumpAndSettle();
+    expect(
+      tester.widget<CurrencyDetailView>(find.byType(CurrencyDetailView)).code,
+      'EUR',
+    );
   });
 }

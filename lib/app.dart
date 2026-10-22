@@ -4,7 +4,8 @@ import 'package:bath_wise/core/router/app_router.dart';
 import 'package:bath_wise/core/router/app_routes.dart';
 import 'package:bath_wise/core/theme/app_theme.dart';
 import 'package:bath_wise/core/theme/app_tokens.dart';
-import 'package:bath_wise/core/theme/theme_mode_controller.dart';
+import 'package:bath_wise/features/settings/presentation/app_lock_gate.dart';
+import 'package:bath_wise/features/settings/presentation/settings_controller.dart';
 import 'package:bath_wise/features/watchlist/data/watchlist_providers.dart';
 import 'package:bath_wise/features/watchlist/presentation/rate_alerts_view_model.dart';
 import 'package:bath_wise/l10n/gen/app_localizations.dart';
@@ -49,17 +50,23 @@ class _BathWiseAppState extends ConsumerState<BathWiseApp> {
     // Listen rather than watch: keeps alert checks and scheduling alive
     // for the session without rebuilding the app on every run.
     ref.listen(alertMonitorProvider, (_, _) {});
+    final (themeMode, languageCode) = ref.watch(
+      settingsControllerProvider.select((s) => (s.themeMode, s.languageCode)),
+    );
     return MaterialApp.router(
       onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       debugShowCheckedModeBanner: false,
       theme: _light,
       darkTheme: _dark,
-      themeMode: ref.watch(themeModeControllerProvider),
+      themeMode: themeMode,
       themeAnimationDuration: AppDurations.slow,
       themeAnimationCurve: Curves.easeInOutCubic,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      // Null follows the device language.
+      locale: languageCode == null ? null : Locale(languageCode),
       routerConfig: ref.watch(appRouterProvider),
+      builder: (_, child) => AppLockGate(child: child ?? const SizedBox()),
     );
   }
 }
